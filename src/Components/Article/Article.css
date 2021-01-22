@@ -1,0 +1,132 @@
+aside {
+  display: none;
+}
+
+/* Article segement */
+.article {
+  width: 90%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 6vh repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "voting header header header header"
+    "voting photo photo photo photo"
+    "voting hline hline hline hline"
+    "footer footer footer footer footer";
+  column-gap: 1em;
+  row-gap: 1em;
+  margin-bottom:5vh;
+  padding-bottom: 1vh;
+}
+
+.articleDivider {
+  grid-area: hline;
+  width: 95%;
+  margin:auto;
+}
+
+.article h2 {
+  grid-area: header;
+  padding-top: 0.5em;
+  margin-left: 1em;
+  text-align: left;
+}
+
+.article .voting {
+  grid-area: voting;
+  margin-left:auto;
+}
+
+.article .articleVotes {
+  padding-top: 2vh;
+  font-weight: bold;
+  padding-left: 2vh;
+}
+
+.article .upArrow {
+  height: 2em;
+  padding-top: 3vh;
+  padding-left: 2vh;
+}
+
+.article .articleFooter {
+  grid-area: footer;
+  display: flex;
+  justify-content:space-between;
+  margin-left: 2vh;
+  margin-right: 2vh;
+  color: grey;
+  font-style: italic;
+}
+
+.article .articleAuthor {
+}
+
+.article .articleDate {
+}
+
+.footerComments {
+  display: flex;
+}
+
+.article .articleComments {
+  margin-left:1vh;
+  align-self: baseline;
+}
+
+.article .commentsLogo {
+  height: 1.5em;
+}
+
+
+.article .articlePicture {
+  grid-area: photo;
+  width: 98%;
+  margin-right: auto;
+  justify-self: center;
+}
+
+
+
+/* Shadow effects */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+.shadowBox
+{
+  background:#FFF;
+  margin:40px auto;
+  position:relative;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+          box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.shadowBox:before, .shadowBox:after
+{
+  content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:0;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.shadowBox:after
+{
+  right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
