@@ -1,75 +1,49 @@
+import Crypto from 'crypto';
 import Snoowrap from 'snoowrap';
 
-const feed = [
-  {
-    id: 0,
-    title: "Title one",
-    img: "https://images.unsplash.com/photo-1534870439272-475575042b61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-    votes: 400,
-    comments: 20,
-    link_to_article: "link",
-    author: "u/boo",
-    date: "today"
-  },
-  {
-    id: 1,
-    title: "Title two",
-    img: "https://images.unsplash.com/photo-1534870439272-475575042b61?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-    votes: 400,
-    comments: 20,
-    link_to_article: "link",
-    author: "u/boo",
-    date: "today"
-  },
-];
-
-// Global reddit connection
-let reddit;
 
 const Reddit = {
 
-  getRedditConnection: () => {
 
-    const userAgent = "";
-    const clientId = "VuHHacyg8NcL9A";
-    const clientSecret = "bciUtL8x_x-GXvQ4pDi9PtoqMJ8SIw";
-    const redirectUri = "https://dreadn0ught.github.io/RedditClient/";
-    const scope = "identity mysubreddits";
-    const state = "ABCDEFG";
-    const link = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=${state}&redirect_uri=${redirectUri}&duration=temporary&scope=${scope}`;
 
-    if(!reddit) {
+  getFeed: async (feedName) => {
 
-      // Look for token in header
-      const urlParams = new URLSearchParams(window.location.search);
-      const error = urlParams.get('error');
-      const code = urlParams.get('code');
-      const stateParam = urlParams.get('state');
-
-      if(error) {
-        console.log("ERROR");
-      }
-
-      if(!code) {
-        window.location = link;
-      }
-      /*reddit = new Snoowrap({
-        userAgent: userAgent,
-        clientId: clientId,
-        clientSecret: clientSecret,
-        refreshToken: null
-      });*/
-
+    if(!feedName) {
+      return [];
     }
 
+    const response = await fetch(`https://www.reddit.com/r/${feedName}.json?limit=256$raw_json=1`);
 
+    const responseJson = await response.json();
+    //console.log(responseJson);
 
-    return reddit;
-  },
+    console.log(responseJson);
+    if(responseJson.error) {
+      console.log(responseJson);
+      return [];
+    }
 
+    const feed = responseJson.data.children.map((entry, id) => {
+      const { data } = entry;
+      const title = data.title;
+      const img = (data.thumbnail !== "self")? data.url : null;
+      const votes = data.ups-data.downs;
+      const comments = data.num_comments;
+      const link_to_article = `https://reddit.com/${data.permalink}`;
+      const author = `u/${data.author}`;
+      const date = data.created;
+      return {
+        id,
+        title,
+        img,
+        votes,
+        comments,
+        link_to_article,
+        author,
+        date
+      };
+    });
 
-  getFeed: (feedName="r/pics") => {
-    const r = Reddit.getRedditConnection();
     return feed;
   }
 

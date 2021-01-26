@@ -22,4 +22,20 @@ describe('App', () => {
     expect(wrapper.exists(Feed)).toBe(true);
   });
 
+  // TODO
+  it('Calls Reddit.getfeed once on load', () => {});
+
+  it('Calls Reddit.getfeed every 5 minutes', () => {});
+
+  it('Calls Reddit.getFeed when the feedName is updated', () => {});
+
+  it('Stores a feed state', () => {});
+
+  it('Passes the feed state to the Feed Component', () => {});
+
+  it('Stores the current reddit feed', () => {});
+
+  it('Contains a function to update the current reddit feed', () => {});
+
+  it('Passes the function to update the reddit feed to the Nav Component', () => {});
 });

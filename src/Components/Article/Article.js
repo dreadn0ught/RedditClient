@@ -1,13 +1,12 @@
 import "./Article.css";
 import UpArrow from "./up_arrow.png";
 import CommentsLogo from "./comments_logo.png";
+import Image from "../Image/Image";
 
 function Article(props) {
 
 
   const article = props.article || {};
-
-  console.log(article);
 
   const {
     title = '',
@@ -19,11 +18,13 @@ function Article(props) {
     date = '',
   } = article;
 
+  // TODO replace date with a date module that calculates date properly
+
   return (
     <div className="article shadowBox">
       <h2><a href={ link_to_article }>{ title }</a></h2>
-      <img className="articlePicture" src={ img } alt="Article" />
       <hr className="articleDivider" />
+      <Image url={img} />
       <div className="voting">
         <img className="upArrow" src={UpArrow} alt="UpVote Arrow" />
         <aside className="attribution">

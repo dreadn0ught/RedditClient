@@ -39,7 +39,23 @@ header h1 {
 
 #feedTitle {
   align-self: center;
+  color: #303030;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: right;
+}
+
+#feedInput {
   margin-right:2vh;
+  color: #303030;
+  font-weight: bold;
+  font-size: 1em;
+  border:none;
+  text-align: left;
+}
+
+#feedInput:hover {
+  border: solid 1px lightblue;
 }
 
 @media only screen and (max-width: 460px) {

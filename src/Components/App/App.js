@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import './App.css';
 
 import Nav from "../Nav/Nav";
@@ -6,11 +8,20 @@ import Reddit from "../../Utils/Reddit";
 
 function App() {
 
-  const feed = Reddit.getFeed();
+  const [feedName, setFeedName] = useState("popular");
+
+  const [feed, setFeed] = useState([{
+    id: 0,
+    title: "Loading.."
+  }]);
+
+  useEffect(() => {
+    Reddit.getFeed(feedName).then(f => setFeed(f));
+  }, [feedName]);
 
   return (
     <div className="App">
-      <Nav />
+      <Nav feedName={feedName} setFeedName={setFeedName}/>
       <Feed feed={feed}/>
     </div>
   );

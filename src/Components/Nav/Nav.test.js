@@ -25,4 +25,10 @@ describe("Nav", () => {
     const wrapper = shallow(<Nav />);
     expect(wrapper.find("#headerLogo")).toHaveLength(1);
   });
+
+  it("Calls setFeedName when the input is updated", () => {
+  });
+
+  it("Updates the input with the current feedName", () => {
+  });
 });
