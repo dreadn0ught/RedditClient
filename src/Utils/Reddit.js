@@ -1,10 +1,4 @@
-import Crypto from 'crypto';
-import Snoowrap from 'snoowrap';
-
-
 const Reddit = {
-
-
 
   getFeed: async (feedName) => {
 
@@ -22,6 +16,8 @@ const Reddit = {
       console.log(responseJson);
       return [];
     }
+
+    // TODO fix images such that it only shows them when they exist
 
     const feed = responseJson.data.children.map((entry, id) => {
       const { data } = entry;
