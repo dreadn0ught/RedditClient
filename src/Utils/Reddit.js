@@ -1,3 +1,5 @@
+import Snoowrap from 'snoowrap';
+
 const feed = [
   {
     id: 0,
@@ -21,6 +23,56 @@ const feed = [
   },
 ];
 
-export function getFeed() {
-  return feed;
-}
+// Global reddit connection
+let reddit;
+
+const Reddit = {
+
+  getRedditConnection: () => {
+
+    const userAgent = "";
+    const clientId = "VuHHacyg8NcL9A";
+    const clientSecret = "bciUtL8x_x-GXvQ4pDi9PtoqMJ8SIw";
+    const redirectUri = "https://dreadn0ught.github.io/RedditClient/";
+    const scope = "identity mysubreddits";
+    const state = "ABCDEFG";
+    const link = `https://www.reddit.com/api/v1/authorize?client_id=${clientId}&response_type=code&state=${state}&redirect_uri=${redirectUri}&duration=temporary&scope=${scope}`;
+
+    if(!reddit) {
+
+      // Look for token in header
+      const urlParams = new URLSearchParams(window.location.search);
+      const error = urlParams.get('error');
+      const code = urlParams.get('code');
+      const stateParam = urlParams.get('state');
+
+      if(error) {
+        console.log("ERROR");
+      }
+
+      if(!code) {
+        window.location = link;
+      }
+      /*reddit = new Snoowrap({
+        userAgent: userAgent,
+        clientId: clientId,
+        clientSecret: clientSecret,
+        refreshToken: null
+      });*/
+
+    }
+
+
+
+    return reddit;
+  },
+
+
+  getFeed: (feedName="r/pics") => {
+    const r = Reddit.getRedditConnection();
+    return feed;
+  }
+
+};
+
+export default Reddit;

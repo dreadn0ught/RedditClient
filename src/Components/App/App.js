@@ -2,11 +2,11 @@ import './App.css';
 
 import Nav from "../Nav/Nav";
 import Feed from "../Feed/Feed";
-import { getFeed } from "../../Utils/Reddit";
+import Reddit from "../../Utils/Reddit";
 
 function App() {
 
-  const feed = getFeed();
+  const feed = Reddit.getFeed();
 
   return (
     <div className="App">

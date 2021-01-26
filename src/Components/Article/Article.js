@@ -21,8 +21,8 @@ function Article(props) {
 
   return (
     <div className="article shadowBox">
-      <h2>{ title }</h2>
-      <img className="articlePicture" src={ img } alt="Article picture" />
+      <h2><a href={ link_to_article }>{ title }</a></h2>
+      <img className="articlePicture" src={ img } alt="Article" />
       <hr className="articleDivider" />
       <div className="voting">
         <img className="upArrow" src={UpArrow} alt="UpVote Arrow" />
