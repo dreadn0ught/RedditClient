@@ -5,7 +5,9 @@ import CommentsLogo from "./comments_logo.png";
 function Article(props) {
 
 
-  const article = props || {};
+  const article = props.article || {};
+
+  console.log(article);
 
   const {
     title = '',
