@@ -19,6 +19,9 @@ function Article(props) {
   } = article;
 
   // TODO replace date with a date module that calculates date properly
+  // TODO make images clickable for articles
+  // TODO make comments clickable for articles
+  // TODO move upvote a little to the right
 
   return (
     <div className="article shadowBox">
