@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/RedditClient/static/css/main.24690ef8.chunk.css",
+    "main.css": "/RedditClient/static/css/main.8ca4a8fb.chunk.css",
     "main.js": "/RedditClient/static/js/main.c6cac5c3.chunk.js",
     "main.js.map": "/RedditClient/static/js/main.c6cac5c3.chunk.js.map",
     "runtime-main.js": "/RedditClient/static/js/runtime-main.35960d49.js",
@@ -10,14 +10,14 @@
     "static/js/3.b13a90ad.chunk.js": "/RedditClient/static/js/3.b13a90ad.chunk.js",
     "static/js/3.b13a90ad.chunk.js.map": "/RedditClient/static/js/3.b13a90ad.chunk.js.map",
     "index.html": "/RedditClient/index.html",
-    "static/css/main.24690ef8.chunk.css.map": "/RedditClient/static/css/main.24690ef8.chunk.css.map",
+    "static/css/main.8ca4a8fb.chunk.css.map": "/RedditClient/static/css/main.8ca4a8fb.chunk.css.map",
     "static/js/2.50cc6f01.chunk.js.LICENSE.txt": "/RedditClient/static/js/2.50cc6f01.chunk.js.LICENSE.txt",
     "static/media/Nav.css": "/RedditClient/static/media/logo.cd0bc7de.png"
   },
   "entrypoints": [
     "static/js/runtime-main.35960d49.js",
     "static/js/2.50cc6f01.chunk.js",
-    "static/css/main.24690ef8.chunk.css",
+    "static/css/main.8ca4a8fb.chunk.css",
     "static/js/main.c6cac5c3.chunk.js"
   ]
 }
