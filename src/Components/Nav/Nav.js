@@ -15,8 +15,7 @@ function Nav(props) {
       <img id="headerLogo" src={Logo} alt="Reddit logo"/>
       <h1 id="title">Reddit Client</h1>
       <div id="feedTitle">
-        <span>r/</span>
-        <label for="feedInput" style={{display:"none"}} >Which reddit feed are you interested in?</label>
+        <label for="feedInput" >r/</label>
         <input id="feedInput" value={feedName} onChange={onChange} />
       </div>
     </header>
