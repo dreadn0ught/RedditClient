@@ -1,5 +1,5 @@
 import "./Nav.css"
-import "./logo.png"
+import Logo from "./logo.png"
 
 function Nav(props) {
 
@@ -10,21 +10,13 @@ function Nav(props) {
     setFeedName(event.target.value);
   }
 
-  console.log(feedName.length);
-  // Update input length
-  const width = feedName.length*19;
-  const style = { width: `${width}px` };
-
-  // TODO add "r/" back in and make the input box auto resize
-
   return (
     <header className="nav">
-      <div id="headerLogo">
-      </div>
+      <img id="headerLogo" src={Logo} alt="Reddit logo"/>
       <h1 id="title">Reddit Client</h1>
       <div id="feedTitle">
         <span>r/</span>
-        <input id="feedInput" value={feedName} onChange={onChange} style={style}/>
+        <input id="feedInput" value={feedName} onChange={onChange} />
       </div>
     </header>
   );

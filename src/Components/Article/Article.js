@@ -2,6 +2,7 @@ import "./Article.css";
 import UpArrow from "./up_arrow.png";
 import CommentsLogo from "./comments_logo.png";
 import Image from "../Image/Image";
+import DateField from "../DateField/DateField";
 
 function Article(props) {
 
@@ -18,7 +19,6 @@ function Article(props) {
     date = '',
   } = article;
 
-  // TODO replace date with a date module that calculates date properly
   // TODO make images clickable for articles
   // TODO make comments clickable for articles
   // TODO move upvote a little to the right
@@ -37,7 +37,7 @@ function Article(props) {
       </div>
       <div className="articleFooter">
         <div className="articleAuthor">{ author }</div>
-        <div className="articleDate">{ date }</div>
+        <div className="articleDate"><DateField date={date} /></div>
         <div className="footerComments">
           <img className="commentsLogo" src={CommentsLogo} alt="Comments logo" />
           <div className="articleComments">{ comments }</div>

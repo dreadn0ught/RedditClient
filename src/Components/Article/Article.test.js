@@ -11,7 +11,10 @@ describe("Article", () => {
   it("Contains the article title", () => {
   });
 
-  it("Contains the article img", () => {
+  it("Renders an Image component", () => {
+  });
+
+  it("Sends the article image url to the Image Component", () => {
   });
 
   it("Contains the number of votes", () => {
@@ -26,6 +29,9 @@ describe("Article", () => {
   it("Contains the article author", () => {
   });
 
-  it("Contains the article date", () => {
+  it("Renders a date component", () => {
+  });
+
+  it("Sends the date to the date component", () => {
   });
 });

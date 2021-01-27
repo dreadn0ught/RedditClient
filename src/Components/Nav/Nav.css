@@ -50,6 +50,7 @@ header h1 {
   color: #303030;
   font-weight: bold;
   font-size: 1em;
+  width: 6em;
   border:none;
   text-align: left;
 }
