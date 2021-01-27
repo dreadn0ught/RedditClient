@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/RedditClient/static/css/main.9c5afa0e.chunk.css",
-    "main.js": "/RedditClient/static/js/main.b66e30e0.chunk.js",
-    "main.js.map": "/RedditClient/static/js/main.b66e30e0.chunk.js.map",
-    "runtime-main.js": "/RedditClient/static/js/runtime-main.013efd8e.js",
-    "runtime-main.js.map": "/RedditClient/static/js/runtime-main.013efd8e.js.map",
-    "static/js/2.408d8861.chunk.js": "/RedditClient/static/js/2.408d8861.chunk.js",
-    "static/js/2.408d8861.chunk.js.map": "/RedditClient/static/js/2.408d8861.chunk.js.map",
-    "static/js/3.6f37f823.chunk.js": "/RedditClient/static/js/3.6f37f823.chunk.js",
-    "static/js/3.6f37f823.chunk.js.map": "/RedditClient/static/js/3.6f37f823.chunk.js.map",
+    "main.css": "/RedditClient/static/css/main.19843cfb.chunk.css",
+    "main.js": "/RedditClient/static/js/main.48a92d1e.chunk.js",
+    "main.js.map": "/RedditClient/static/js/main.48a92d1e.chunk.js.map",
+    "runtime-main.js": "/RedditClient/static/js/runtime-main.35960d49.js",
+    "runtime-main.js.map": "/RedditClient/static/js/runtime-main.35960d49.js.map",
+    "static/js/2.50cc6f01.chunk.js": "/RedditClient/static/js/2.50cc6f01.chunk.js",
+    "static/js/2.50cc6f01.chunk.js.map": "/RedditClient/static/js/2.50cc6f01.chunk.js.map",
+    "static/js/3.b13a90ad.chunk.js": "/RedditClient/static/js/3.b13a90ad.chunk.js",
+    "static/js/3.b13a90ad.chunk.js.map": "/RedditClient/static/js/3.b13a90ad.chunk.js.map",
     "index.html": "/RedditClient/index.html",
-    "static/css/main.9c5afa0e.chunk.css.map": "/RedditClient/static/css/main.9c5afa0e.chunk.css.map",
-    "static/js/2.408d8861.chunk.js.LICENSE.txt": "/RedditClient/static/js/2.408d8861.chunk.js.LICENSE.txt",
+    "static/css/main.19843cfb.chunk.css.map": "/RedditClient/static/css/main.19843cfb.chunk.css.map",
+    "static/js/2.50cc6f01.chunk.js.LICENSE.txt": "/RedditClient/static/js/2.50cc6f01.chunk.js.LICENSE.txt",
     "static/media/Nav.css": "/RedditClient/static/media/logo.cd0bc7de.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.013efd8e.js",
-    "static/js/2.408d8861.chunk.js",
-    "static/css/main.9c5afa0e.chunk.css",
-    "static/js/main.b66e30e0.chunk.js"
+    "static/js/runtime-main.35960d49.js",
+    "static/js/2.50cc6f01.chunk.js",
+    "static/css/main.19843cfb.chunk.css",
+    "static/js/main.48a92d1e.chunk.js"
   ]
 }
