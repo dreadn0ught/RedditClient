@@ -7,6 +7,7 @@ aside {
   width: 90%;
   height: auto;
   display: grid;
+  padding: 1em;
   grid-template-columns: 6vh repeat(4, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
@@ -14,7 +15,7 @@ aside {
     "voting photo photo photo photo"
     "voting hline hline hline hline"
     "footer footer footer footer footer";
-  column-gap: 1em;
+  column-gap: 2px;
   row-gap: 1em;
   margin-bottom:5vh;
   padding-bottom: 1vh;
