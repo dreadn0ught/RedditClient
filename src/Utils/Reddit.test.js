@@ -2,6 +2,9 @@ import Reddit from "./Reddit";
 
 describe("Reddit", () => {
 
+
+  // TODO split out tests to be for redditfetch and getFeed which processes
+  // the results
   describe("getFeed", () => {
     it("Returns a list of articles", () => {
       expect.assertions(1);

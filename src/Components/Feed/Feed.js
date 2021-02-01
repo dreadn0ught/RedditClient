@@ -2,6 +2,7 @@ import Article from "../Article/Article"
 
 function Feed(props) {
 
+  // TODO only show the top 10 articles and load as the user scrolls
   const feed = props.feed || [];
 
   return (

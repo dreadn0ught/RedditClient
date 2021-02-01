@@ -1,25 +1,37 @@
 const Reddit = {
 
+
+  getImage: (data) => {
+    if(['self', 'default', 'nsfw'].indexOf(data.thumbnail) < 0) {
+      if(data.url.endsWith(".jpg")) {
+        return data.url ;
+      }
+    }
+
+    return null;
+  },
+
+  redditFetch: async (feedName) => {
+    const response = await fetch(`https://www.reddit.com/r/${feedName}.json?limit=256$raw_json=1`);
+
+    return await response.json();
+  },
+
   getFeed: async (feedName) => {
     if(!feedName) {
       return [];
     }
 
-    const response = await fetch(`https://www.reddit.com/r/${feedName}.json?limit=256$raw_json=1`);
-
-    const responseJson = await response.json();
-    //console.log(responseJson);
+    const responseJson = await Reddit.redditFetch(feedName);
 
     if(responseJson.error) {
       return [];
     }
 
-    // TODO fix images such that it only shows them when they exist
-
     const feed = responseJson.data.children.map((entry, id) => {
       const { data } = entry;
       const title = data.title;
-      const img = (data.thumbnail !== "self")? data.url : null;
+      const img = Reddit.getImage(data);
       const votes = data.ups-data.downs;
       const comments = data.num_comments;
       const link_to_article = `https://reddit.com/${data.permalink}`;
