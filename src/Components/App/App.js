@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import './App.css';
-
 import Nav from "../Nav/Nav";
 import Feed from "../Feed/Feed";
 import Reddit from "../../Utils/Reddit";

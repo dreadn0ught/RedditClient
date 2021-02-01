@@ -42,6 +42,11 @@ describe('App', () => {
     expect(wrapper.exists(Feed)).toBe(true);
   });
 
+  it('Passes the feed state to the Feed Component', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find(Feed).props().feed).toEqual([{id:0, title:"Loading.."}]);
+  });
+
   it('Calls Reddit.getfeed on on load', done => {
     const mockGetFeed = jest.spyOn(Reddit, 'getFeed');
     const wrapper = mount(<App />);
@@ -50,28 +55,27 @@ describe('App', () => {
       expect(mockGetFeed).toHaveBeenCalled();
       done();
     });
-
   });
-/*
+
+  /* Still can't get this working, this requires a refactor of the state to
+   * use a Reducer
   it('Calls Reddit.getFeed when the feedName is updated', done => {
 
     const feed = "test";
-    //const mockGetFeed = jest.spyOn(Reddit, 'getFeed');
-    const wrapper = mount(<App />);
+    const mockGetFeed = jest.spyOn(Reddit, 'getFeed').mockReturnValue(new Promise(resolve => []));
+    const wrapper = shallow(<App />);
 
-    //setTimeout(() => {
-    //  expect(mockGetFeed).toHaveBeenCalledWith(feed);
+    wrapper.setState({ feed: feed });
+    setTimeout(() => {
+      expect(mockGetFeed).toHaveBeenCalledWith(feed);
       done();
-    //});
+    });
   });
-*/
-  it('Stores a feed state', () => {});
-
-  it('Passes the feed state to the Feed Component', () => {});
 
   it('Stores the current reddit feed', () => {});
 
   it('Contains a function to update the current reddit feed', () => {});
 
   it('Passes the function to update the reddit feed to the Nav Component', () => {});
+  */
 });
