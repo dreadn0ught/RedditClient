@@ -1,4 +1,4 @@
-import { shallow } from 'enzyme';
+import { shallow , mount } from 'enzyme';
 import Feed from './Feed';
 import Article from '../Article/Article';
 
@@ -28,7 +28,7 @@ describe("Feed", () => {
       },
     ];
 
-    const wrapper = shallow(<Feed feed={feed} />);
+    const wrapper = mount(<Feed feed={feed} />);
 
     expect(wrapper.find('.feed')).toBeDefined();
     expect(wrapper.find(Article)).toHaveLength(feed.length);
