@@ -5,7 +5,6 @@ import Feed from '../Feed/Feed';
 
 const Reddit = {
   getFeed: async (feedName) => {
-    console.log("Mocked");
     return [];
   }
 };
