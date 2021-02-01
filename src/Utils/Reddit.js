@@ -1,7 +1,6 @@
 const Reddit = {
 
   getFeed: async (feedName) => {
-
     if(!feedName) {
       return [];
     }
@@ -11,9 +10,7 @@ const Reddit = {
     const responseJson = await response.json();
     //console.log(responseJson);
 
-    console.log(responseJson);
     if(responseJson.error) {
-      console.log(responseJson);
       return [];
     }
 

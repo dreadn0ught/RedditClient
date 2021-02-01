@@ -1,15 +1,35 @@
-import { render, screen } from '@testing-library/react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import App from './App';
 import Nav from '../Nav/Nav';
 import Feed from '../Feed/Feed';
 
+const Reddit = {
+  getFeed: async (feedName) => {
+    console.log("Mocked");
+    return [];
+  }
+};
+
+jest.mock('../../Utils/Reddit', () => (Reddit));
+
 describe('App', () => {
 
+  /* WARNING this is to stop an error with our version of enzyme and react17
+  * Once this is fixed this should be removed
+  */
+  beforeEach(function() {
+    this.originalError = console.error;
+    console.error = jest.fn();
+  });
+
+  afterEach(function() {
+    console.log = this.originalError;
+  });
+
+
   it('renders Reddit title', () => {
-    render(<App />);
-    const linkElement = screen.getByText(/Reddit/i);
-    expect(linkElement).toBeInTheDocument();
+    const wrapper = mount(<App />);
+    expect(wrapper.text()).toEqual(expect.stringContaining("Reddit"));
   });
 
   it('has a navigation bar', () => {
@@ -22,13 +42,29 @@ describe('App', () => {
     expect(wrapper.exists(Feed)).toBe(true);
   });
 
-  // TODO
-  it('Calls Reddit.getfeed once on load', () => {});
+  it('Calls Reddit.getfeed on on load', done => {
+    const mockGetFeed = jest.spyOn(Reddit, 'getFeed');
+    const wrapper = mount(<App />);
 
-  it('Calls Reddit.getfeed every 5 minutes', () => {});
+    setTimeout(() => {
+      expect(mockGetFeed).toHaveBeenCalled();
+      done();
+    });
 
-  it('Calls Reddit.getFeed when the feedName is updated', () => {});
+  });
+/*
+  it('Calls Reddit.getFeed when the feedName is updated', done => {
 
+    const feed = "test";
+    //const mockGetFeed = jest.spyOn(Reddit, 'getFeed');
+    const wrapper = mount(<App />);
+
+    //setTimeout(() => {
+    //  expect(mockGetFeed).toHaveBeenCalledWith(feed);
+      done();
+    //});
+  });
+*/
   it('Stores a feed state', () => {});
 
   it('Passes the feed state to the Feed Component', () => {});

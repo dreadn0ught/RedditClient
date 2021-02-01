@@ -15,7 +15,7 @@ function Nav(props) {
       <img id="headerLogo" src={Logo} alt="Reddit logo"/>
       <h1 id="title">Reddit Client</h1>
       <div id="feedTitle">
-        <label for="feedInput" >r/</label>
+        <label htmlFor="feedInput" >r/</label>
         <input id="feedInput" value={feedName} onChange={onChange} />
       </div>
     </header>

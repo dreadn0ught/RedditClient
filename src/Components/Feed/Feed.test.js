@@ -9,7 +9,6 @@ describe("Feed", () => {
   });
 
   it("Creates a list of articles", () => {
-    // TODO get reddit details externally
     const feed = [
       {
         id: 0,

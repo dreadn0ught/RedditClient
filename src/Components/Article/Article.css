@@ -35,19 +35,21 @@ aside {
 
 .article .voting {
   grid-area: voting;
-  margin-left:auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: start;
 }
 
 .article .articleVotes {
   padding-top: 2vh;
   font-weight: bold;
-  padding-left: 2vh;
+  align-self: center;
 }
 
 .article .upArrow {
   height: 2em;
   padding-top: 3vh;
-  padding-left: 2vh;
+  align-self: center;
 }
 
 .article .articleFooter {
@@ -130,11 +132,11 @@ hr {
             transform:skew(8deg) rotate(3deg);
 }
 
-h2 a {
+a {
    color: inherit;
    text-decoration: inherit;
 }
 
-h2 a:hover {
+a:hover {
   text-decoration: underline;
 }
