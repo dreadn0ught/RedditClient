@@ -2,6 +2,8 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { useState, useMemo, useEffect } from 'react';
 import Article from "../Article/Article"
 
+import "./Feed.css";
+
 function Feed(props) {
 
   const feed = useMemo(() => props.feed || [], [props.feed]);
@@ -28,7 +30,8 @@ function Feed(props) {
   };
 
   return (
-    <main className="feed">
+    <main>
+    <div className="feed">
       <InfiniteScroll
         dataLength={items.length}
         next={fetchMoreData}
@@ -38,6 +41,7 @@ function Feed(props) {
         items.map(article => <Article key={article.id} article={article} />)
       }
       </InfiniteScroll>
+    </div>
     </main>
   );
 }
